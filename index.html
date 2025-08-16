@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,253 +6,192 @@
 <title>Afaq Shahb Investment Plan — Dashboard</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <style>
-  body{background:#0b1b2a;color:#eef2f6}
-  .navbar{background:#0f5132}
-  .brand{font-weight:700}
-  .plan-card{background:#101828;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:.2s transform}
-  .plan-card:hover{transform:translateY(-4px)}
-  .plan-title{color:#22c55e;font-weight:700}
-  .badge-soft{background:#fee2e2;color:#991b1b}
-  .footer{background:#09121b;color:#9aa4af}
-  .btn-buy{background:#22c55e;border:none}
-  .btn-buy:hover{background:#16a34a}
-  .btn-details{border-color:#22c55e;color:#22c55e}
-  .btn-details:hover{background:#22c55e;color:#fff}
-  .hdr{background:linear-gradient(135deg,#0f5132,#198754);border-radius:16px}
+    body {
+        background-color: #0b1b2a;
+        color: white;
+    }
+    .plan-card {
+        background: #101828;
+        border-radius: 10px;
+        padding: 20px;
+        color: white;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        transition: transform 0.3s;
+    }
+    .plan-card:hover {
+        transform: translateY(-5px);
+    }
+    .plan-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #00d084;
+    }
+    .footer {
+        text-align: center;
+        padding: 15px;
+        background: #000;
+        margin-top: 30px;
+    }
+    .whatsapp-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25D366;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
 </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
   <div class="container">
-    <a class="navbar-brand brand" href="index.html">Afaq Shahb Investment Plan</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div id="nav" class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Dashboard</a></li>
-        <li class="nav-item"><a class="nav-link" href="deposit.html">Deposit</a></li>
-        <li class="nav-item"><a class="nav-link" href="withdraw.html">Withdraw</a></li>
-        <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
-        <li class="nav-item"><a class="nav-link" href="referral.html">Referral</a></li>
-      </ul>
+    <a class="navbar-brand" href="#">Afaq Shahb Investment Plan</a>
+    <div>
+      <a href="deposit.html" class="btn btn-success btn-sm">Deposit</a>
+      <a href="withdraw.html" class="btn btn-danger btn-sm">Withdraw</a>
+      <a href="history.html" class="btn btn-warning btn-sm">History</a>
+      <a href="referral.html" class="btn btn-info btn-sm">Referral</a>
     </div>
   </div>
 </nav>
 
-<header class="container my-4">
-  <div class="hdr p-4 text-white text-center">
-    <h1 class="fw-bold mb-1">Dashboard</h1>
-    <p class="mb-0">All VIP plans now run for <span class="fw-semibold">30 days</span>.</p>
-  </div>
-</header>
+<!-- Dashboard Heading -->
+<div class="container my-4">
+    <h1 class="text-center text-success fw-bold">Dashboard</h1>
+    <p class="text-center text-secondary">All Available VIP Plans (30 Days)</p>
+</div>
 
-<main class="container pb-5">
-  <h3 class="mb-3">VIP Investment Plans</h3>
-  <div class="row g-4">
+<!-- Plans Section -->
+<div class="container">
+    <div class="row g-4">
 
-    <!-- VIP-1 -->
-    <div class="col-sm-6 col-lg-4">
-      <div class="plan-card p-3 h-100">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="plan-title">VIP-1</div>
-          <span class="badge badge-soft px-2 py-1">Starter</span>
+        <!-- VIP 1 -->
+        <div class="col-md-4">
+            <div class="plan-card">
+                <div class="plan-title">VIP 1</div>
+                <p>Price: Rs 1,000</p>
+                <p>Daily Profit: Rs 166</p>
+                <p>Total Profit: Rs 5,000</p>
+                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
+            </div>
         </div>
-        <hr class="border-secondary opacity-25">
-        <p class="mb-1">Price: <strong>Rs 500</strong></p>
-        <p class="mb-1">Daily Profit: <strong>Rs 83</strong></p>
-        <p class="mb-1">Total Profit (30d): <strong>Rs 2,490</strong></p>
-        <p class="mb-3">Duration: <strong>30 Days</strong></p>
-        <div class="d-flex gap-2">
-          <a href="deposit.html?plan=VIP-1" class="btn btn-buy btn-sm">Buy Now</a>
-          <a href="#" class="btn btn-details btn-sm" onclick="alert('VIP-1: Rs 500 • Daily 83 • 30 Days');return false;">Details</a>
+
+        <!-- VIP 2 -->
+        <div class="col-md-4">
+            <div class="plan-card">
+                <div class="plan-title">VIP 2</div>
+                <p>Price: Rs 1,500</p>
+                <p>Daily Profit: Rs 250</p>
+                <p>Total Profit: Rs 7,500</p>
+                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
+            </div>
         </div>
-      </div>
+
+        <!-- VIP 3 -->
+        <div class="col-md-4">
+            <div class="plan-card">
+                <div class="plan-title">VIP 3</div>
+                <p>Price: Rs 5,000</p>
+                <p>Daily Profit: Rs 833</p>
+                <p>Total Profit: Rs 25,000</p>
+                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
+            </div>
+        </div>
+
+        <!-- VIP 4 -->
+        <div class="col-md-4">
+            <div class="plan-card">
+                <div class="plan-title">VIP 4</div>
+                <p>Price: Rs 10,000</p>
+                <p>Daily Profit: Rs 1,666</p>
+                <p>Total Profit: Rs 50,000</p>
+                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
+            </div>
+        </div>
+
+        <!-- VIP 5 -->
+        <div class="col-md-4">
+            <div class="plan-card">
+                <div class="plan-title">VIP 5</div>
+                <p>Price: Rs 25,000</p>
+                <p>Daily Profit: Rs 4,166</p>
+                <p>Total Profit: Rs 125,000</p>
+                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
+            </div>
+        </div>
+
+        <!-- VIP 6 -->
+        <div class="col-md-4">
+            <div class="plan-card">
+                <div class="plan-title">VIP 6</div>
+                <p>Price: Rs 50,000</p>
+                <p>Daily Profit: Rs 8,333</p>
+                <p>Total Profit: Rs 250,000</p>
+                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
+            </div>
+        </div>
+
+        <!-- VIP 7 -->
+        <div class="col-md-4">
+            <div class="plan-card">
+                <div class="plan-title">VIP 7</div>
+                <p>Price: Rs 100,000</p>
+                <p>Daily Profit: Rs 16,666</p>
+                <p>Total Profit: Rs 500,000</p>
+                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
+            </div>
+        </div>
+
+        <!-- VIP 8 -->
+        <div class="col-md-4">
+            <div class="plan-card">
+                <div class="plan-title">VIP 8</div>
+                <p>Price: Rs 150,000</p>
+                <p>Daily Profit: Rs 25,000</p>
+                <p>Total Profit: Rs 750,000</p>
+                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
+            </div>
+        </div>
+
+        <!-- VIP 9 -->
+        <div class="col-md-4">
+            <div class="plan-card">
+                <div class="plan-title">VIP 9</div>
+                <p>Price: Rs 200,000</p>
+                <p>Daily Profit: Rs 33,333</p>
+                <p>Total Profit: Rs 1,000,000</p>
+                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
+            </div>
+        </div>
+
+        <!-- VIP 10 -->
+        <div class="col-md-4">
+            <div class="plan-card">
+                <div class="plan-title">VIP 10</div>
+                <p>Price: Rs 300,000</p>
+                <p>Daily Profit: Rs 50,000</p>
+                <p>Total Profit: Rs 1,500,000</p>
+                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
+            </div>
+        </div>
+
     </div>
+</div>
 
-    <!-- VIP-2 -->
-    <div class="col-sm-6 col-lg-4">
-      <div class="plan-card p-3 h-100">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="plan-title">VIP-2</div>
-          <span class="badge badge-soft px-2 py-1">Basic</span>
-        </div>
-        <hr class="border-secondary opacity-25">
-        <p class="mb-1">Price: <strong>Rs 1,000</strong></p>
-        <p class="mb-1">Daily Profit: <strong>Rs 333</strong></p>
-        <p class="mb-1">Total Profit (30d): <strong>Rs 9,990</strong></p>
-        <p class="mb-3">Duration: <strong>30 Days</strong></p>
-        <div class="d-flex gap-2">
-          <a href="deposit.html?plan=VIP-2" class="btn btn-buy btn-sm">Buy Now</a>
-          <a href="#" class="btn btn-details btn-sm" onclick="alert('VIP-2: Rs 1000 • Daily 333 • 30 Days');return false;">Details</a>
-        </div>
-      </div>
-    </div>
+<!-- Footer -->
+<div class="footer">
+    &copy; 2025 Afaq Shahb Investment Plan. All Rights Reserved.
+</div>
 
-    <!-- VIP-3 -->
-    <div class="col-sm-6 col-lg-4">
-      <div class="plan-card p-3 h-100">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="plan-title">VIP-3</div>
-          <span class="badge badge-soft px-2 py-1">Value</span>
-        </div>
-        <hr class="border-secondary opacity-25">
-        <p class="mb-1">Price: <strong>Rs 5,000</strong></p>
-        <p class="mb-1">Daily Profit: <strong>Rs 1,667</strong></p>
-        <p class="mb-1">Total Profit (30d): <strong>Rs 50,010</strong></p>
-        <p class="mb-3">Duration: <strong>30 Days</strong></p>
-        <div class="d-flex gap-2">
-          <a href="deposit.html?plan=VIP-3" class="btn btn-buy btn-sm">Buy Now</a>
-          <a href="#" class="btn btn-details btn-sm" onclick="alert('VIP-3: Rs 5000 • Daily 1667 • 30 Days');return false;">Details</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- VIP-4 -->
-    <div class="col-sm-6 col-lg-4">
-      <div class="plan-card p-3 h-100">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="plan-title">VIP-4</div>
-          <span class="badge badge-soft px-2 py-1">Plus</span>
-        </div>
-        <hr class="border-secondary opacity-25">
-        <p class="mb-1">Price: <strong>Rs 10,000</strong></p>
-        <p class="mb-1">Daily Profit: <strong>Rs 3,333</strong></p>
-        <p class="mb-1">Total Profit (30d): <strong>Rs 99,990</strong></p>
-        <p class="mb-3">Duration: <strong>30 Days</strong></p>
-        <div class="d-flex gap-2">
-          <a href="deposit.html?plan=VIP-4" class="btn btn-buy btn-sm">Buy Now</a>
-          <a href="#" class="btn btn-details btn-sm" onclick="alert('VIP-4: Rs 10000 • Daily 3333 • 30 Days');return false;">Details</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- VIP-5 -->
-    <div class="col-sm-6 col-lg-4">
-      <div class="plan-card p-3 h-100">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="plan-title">VIP-5</div>
-          <span class="badge badge-soft px-2 py-1">Pro</span>
-        </div>
-        <hr class="border-secondary opacity-25">
-        <p class="mb-1">Price: <strong>Rs 25,000</strong></p>
-        <p class="mb-1">Daily Profit: <strong>Rs 8,333</strong></p>
-        <p class="mb-1">Total Profit (30d): <strong>Rs 249,990</strong></p>
-        <p class="mb-3">Duration: <strong>30 Days</strong></p>
-        <div class="d-flex gap-2">
-          <a href="deposit.html?plan=VIP-5" class="btn btn-buy btn-sm">Buy Now</a>
-          <a href="#" class="btn btn-details btn-sm" onclick="alert('VIP-5: Rs 25000 • Daily 8333 • 30 Days');return false;">Details</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- VIP-6 -->
-    <div class="col-sm-6 col-lg-4">
-      <div class="plan-card p-3 h-100">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="plan-title">VIP-6</div>
-          <span class="badge badge-soft px-2 py-1">Pro+</span>
-        </div>
-        <hr class="border-secondary opacity-25">
-        <p class="mb-1">Price: <strong>Rs 50,000</strong></p>
-        <p class="mb-1">Daily Profit: <strong>Rs 16,667</strong></p>
-        <p class="mb-1">Total Profit (30d): <strong>Rs 500,010</strong></p>
-        <p class="mb-3">Duration: <strong>30 Days</strong></p>
-        <div class="d-flex gap-2">
-          <a href="deposit.html?plan=VIP-6" class="btn btn-buy btn-sm">Buy Now</a>
-          <a href="#" class="btn btn-details btn-sm" onclick="alert('VIP-6: Rs 50000 • Daily 16667 • 30 Days');return false;">Details</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- VIP-7 -->
-    <div class="col-sm-6 col-lg-4">
-      <div class="plan-card p-3 h-100">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="plan-title">VIP-7</div>
-          <span class="badge badge-soft px-2 py-1">Elite</span>
-        </div>
-        <hr class="border-secondary opacity-25">
-        <p class="mb-1">Price: <strong>Rs 75,000</strong></p>
-        <p class="mb-1">Daily Profit: <strong>Rs 25,000</strong></p>
-        <p class="mb-1">Total Profit (30d): <strong>Rs 750,000</strong></p>
-        <p class="mb-3">Duration: <strong>30 Days</strong></p>
-        <div class="d-flex gap-2">
-          <a href="deposit.html?plan=VIP-7" class="btn btn-buy btn-sm">Buy Now</a>
-          <a href="#" class="btn btn-details btn-sm" onclick="alert('VIP-7: Rs 75000 • Daily 25000 • 30 Days');return false;">Details</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- VIP-8 -->
-    <div class="col-sm-6 col-lg-4">
-      <div class="plan-card p-3 h-100">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="plan-title">VIP-8</div>
-          <span class="badge badge-soft px-2 py-1">Elite+</span>
-        </div>
-        <hr class="border-secondary opacity-25">
-        <p class="mb-1">Price: <strong>Rs 100,000</strong></p>
-        <p class="mb-1">Daily Profit: <strong>Rs 33,333</strong></p>
-        <p class="mb-1">Total Profit (30d): <strong>Rs 999,990</strong></p>
-        <p class="mb-3">Duration: <strong>30 Days</strong></p>
-        <div class="d-flex gap-2">
-          <a href="deposit.html?plan=VIP-8" class="btn btn-buy btn-sm">Buy Now</a>
-          <a href="#" class="btn btn-details btn-sm" onclick="alert('VIP-8: Rs 100000 • Daily 33333 • 30 Days');return false;">Details</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- VIP-9 -->
-    <div class="col-sm-6 col-lg-4">
-      <div class="plan-card p-3 h-100">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="plan-title">VIP-9</div>
-          <span class="badge badge-soft px-2 py-1">Ultra</span>
-        </div>
-        <hr class="border-secondary opacity-25">
-        <p class="mb-1">Price: <strong>Rs 150,000</strong></p>
-        <p class="mb-1">Daily Profit: <strong>Rs 55,333</strong></p>
-        <p class="mb-1">Total Profit (30d): <strong>Rs 1,659,990</strong></p>
-        <p class="mb-3">Duration: <strong>30 Days</strong></p>
-        <div class="d-flex gap-2">
-          <a href="deposit.html?plan=VIP-9" class="btn btn-buy btn-sm">Buy Now</a>
-          <a href="#" class="btn btn-details btn-sm" onclick="alert('VIP-9: Rs 150000 • Daily 55333 • 30 Days');return false;">Details</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- VIP-10 -->
-    <div class="col-sm-6 col-lg-4">
-      <div class="plan-card p-3 h-100">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="plan-title">VIP-10</div>
-          <span class="badge badge-soft px-2 py-1">Ultra+</span>
-        </div>
-        <hr class="border-secondary opacity-25">
-        <p class="mb-1">Price: <strong>Rs 200,000</strong></p>
-        <p class="mb-1">Daily Profit: <strong>Rs 68,333</strong></p>
-        <p class="mb-1">Total Profit (30d): <strong>Rs 2,049,990</strong></p>
-        <p class="mb-3">Duration: <strong>30 Days</strong></p>
-        <div class="d-flex gap-2">
-          <a href="deposit.html?plan=VIP-10" class="btn btn-buy btn-sm">Buy Now</a>
-          <a href="#" class="btn btn-details btn-sm" onclick="alert('VIP-10: Rs 200000 • Daily 68333 • 30 Days');return false;">Details</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</main>
-
-<footer class="footer py-3 text-center">
-  &copy; 2025 Afaq Shahb Investment Plan. All Rights Reserved.
-</footer>
-
-<a href="https://wa.me/923260357695" target="_blank"
-   class="position-fixed text-decoration-none fw-bold"
-   style="right:20px;bottom:20px;background:#25D366;color:#fff;padding:12px 18px;border-radius:999px;box-shadow:0 6px 16px rgba(0,0,0,.35);">
-  💬 WhatsApp
+<!-- WhatsApp Button -->
+<a href="https://wa.me/923260357695" target="_blank" class="whatsapp-btn">
+    💬 WhatsApp
 </a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
