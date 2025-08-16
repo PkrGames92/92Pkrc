@@ -1,0 +1,100 @@
+<!-- withdraw.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Withdraw — Afaq Shahb Investment Plan</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body{background:#0b1b2a;color:#eef2f6}
+  .navbar{background:#0f5132}
+  .card{background:#101828;border-radius:12px}
+  .btn-submit{background:#22c55e;border:none}
+  .btn-submit:hover{background:#16a34a}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Afaq Shahb Investment Plan</a>
+  </div>
+</nav>
+
+<main class="container py-4">
+  <h2 class="mb-3">Withdraw</h2>
+
+  <div class="row g-4">
+    <div class="col-lg-6">
+      <div class="card p-3">
+        <h5 class="mb-3">Request Withdraw (Demo)</h5>
+        <form onsubmit="submitWithdraw(event)">
+          <div class="mb-2">
+            <label class="form-label">Amount (Rs)</label>
+            <input id="wamount" type="number" class="form-control" required>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Method</label>
+            <select id="wmethod" class="form-select" required>
+              <option value="">Select</option>
+              <option>EasyPaisa</option>
+              <option>JazzCash</option>
+              <option>USDT (TRC20)</option>
+            </select>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Your Wallet / Number</label>
+            <input id="wdest" class="form-control" placeholder="e.g., 03XXXXXXXXX or USDT address" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Transaction ID (optional)</label>
+            <input id="wtxid" class="form-control" placeholder="If applicable">
+          </div>
+          <button class="btn btn-submit">Submit Withdraw</button>
+          <a href="history.html" class="btn btn-outline-light ms-2">View History</a>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card p-3">
+        <h5 class="mb-2">Payout Channels</h5>
+        <ul class="mb-0">
+          <li>EasyPaisa — <strong>03319535871</strong></li>
+          <li>JazzCash — <strong>03159676813</strong></li>
+          <li>USDT (TRC20) — <strong>TRREi2xqQF9rqQt23xBviZ3h9zWkQiUaaq</strong></li>
+        </ul>
+        <div class="small text-warning mt-3">Demo only: requests are stored in your browser (localStorage).</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<a href="https://wa.me/923260357695" target="_blank" class="position-fixed text-decoration-none fw-bold"
+   style="right:20px;bottom:20px;background:#25D366;color:#fff;padding:12px 18px;border-radius:999px;box-shadow:0 6px 16px rgba(0,0,0,.35);">
+  💬 WhatsApp
+</a>
+
+<script>
+function submitWithdraw(e){
+  e.preventDefault();
+  const rec={
+    type:'Withdraw',
+    amount:+document.getElementById('wamount').value||0,
+    method:document.getElementById('wmethod').value,
+    to:document.getElementById('wdest').value.trim(),
+    txid:(document.getElementById('wtxid').value||'').trim(),
+    status:'Pending',
+    time:new Date().toISOString()
+  };
+  const list=JSON.parse(localStorage.getItem('tx')||'[]');
+  list.push(rec);
+  localStorage.setItem('tx',JSON.stringify(list));
+  alert('Withdraw request submitted (Pending). Check History.');
+  e.target.reset();
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
