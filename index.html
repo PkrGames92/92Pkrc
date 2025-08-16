@@ -1,164 +1,305 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Afaq Shahb Investment Plan — Dashboard</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<style>
-    body {
-        background-color: #0b1b2a;
-        color: white;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Afaq Shahb Investment Plan — Dashboard (Auto Payout)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0b1b2a; --card:#101828; --text:#ffffff; --muted:#9aa4b2; --accent:#00d084;
     }
-    .plan-card {
-        background: #101828;
-        border-radius: 10px;
-        padding: 20px;
-        color: white;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        transition: transform 0.3s;
-    }
-    .plan-card:hover {
-        transform: translateY(-5px);
-    }
-    .plan-title {
-        font-size: 1.3rem;
-        font-weight: bold;
-        color: #00d084;
-    }
-    .footer {
-        text-align: center;
-        padding: 15px;
-        background: #000;
-        margin-top: 30px;
-    }
-    .whatsapp-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #25D366;
-        color: white;
-        padding: 12px 20px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: bold;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    }
-    .action-bar {
-        margin: 20px 0;
-        text-align: center;
-    }
-    .action-bar a {
-        margin: 5px;
-    }
-</style>
+    body{background:var(--bg); color:var(--text); padding-bottom:80px}
+    .navbar{border-bottom:1px solid #243447}
+    .plan-card{background:var(--card); border-radius:14px; padding:20px; box-shadow:0 6px 18px rgba(0,0,0,.35); transition:transform .25s}
+    .plan-card:hover{transform:translateY(-6px)}
+    .plan-title{font-size:1.15rem; font-weight:700; color:var(--accent)}
+    .footer{background:#000; text-align:center; padding:16px; margin-top:32px}
+    .whatsapp-btn{position:fixed; right:20px; bottom:20px; background:#25D366; color:#fff; padding:12px 18px; border-radius:999px; text-decoration:none; font-weight:700; box-shadow:0 4px 10px rgba(0,0,0,.35)}
+    .action-bar a{margin:6px}
+    .badge-soft{background:rgba(0,208,132,.12); color:var(--accent); border:1px solid rgba(0,208,132,.35)}
+    .countdown{font-variant-numeric:tabular-nums; font-weight:700}
+    .dim{color:var(--muted)}
+    .disabled-cover{opacity:.65; pointer-events:none}
+  </style>
 </head>
-<body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
-  <div class="container">
-    <a class="navbar-brand" href="#">Afaq Shahb Investment Plan</a>
-  </div>
-</nav>
-
-<!-- Dashboard Heading -->
-<div class="container my-4 text-center">
-    <h1 class="text-success fw-bold">Dashboard</h1>
-    <p class="text-secondary">All Available VIP Plans (30 Days)</p>
-</div>
-
-<!-- Action Buttons -->
-<div class="action-bar">
-    <a href="deposit.html" class="btn btn-success">Deposit</a>
-    <a href="withdraw.html" class="btn btn-danger">Withdraw</a>
-    <a href="history.html" class="btn btn-warning">History</a>
-    <a href="referral.html" class="btn btn-info">Referral</a>
-</div>
-
-<!-- Plans Section -->
-<div class="container">
-    <div class="row g-4">
-
-        <!-- VIP 1 -->
-        <div class="col-md-4">
-            <div class="plan-card">
-                <div class="plan-title">VIP 1</div>
-                <p>Price: Rs 1,000</p>
-                <p>Daily Profit: Rs 166</p>
-                <p>Total Profit: Rs 5,000</p>
-                <p>Duration: 30 Days</p>
-                <p>Daily Tasks: 2 TikTok Videos</p>
-                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
-            </div>
-        </div>
-
-        <!-- VIP 2 -->
-        <div class="col-md-4">
-            <div class="plan-card">
-                <div class="plan-title">VIP 2</div>
-                <p>Price: Rs 1,500</p>
-                <p>Daily Profit: Rs 250</p>
-                <p>Total Profit: Rs 7,500</p>
-                <p>Duration: 30 Days</p>
-                <p>Daily Tasks: 3 TikTok Videos</p>
-                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
-            </div>
-        </div>
-
-        <!-- VIP 3 -->
-        <div class="col-md-4">
-            <div class="plan-card">
-                <div class="plan-title">VIP 3</div>
-                <p>Price: Rs 5,000</p>
-                <p>Daily Profit: Rs 833</p>
-                <p>Total Profit: Rs 25,000</p>
-                <p>Duration: 30 Days</p>
-                <p>Daily Tasks: 5 TikTok Videos</p>
-                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
-            </div>
-        </div>
-
-        <!-- VIP 4 -->
-        <div class="col-md-4">
-            <div class="plan-card">
-                <div class="plan-title">VIP 4</div>
-                <p>Price: Rs 10,000</p>
-                <p>Daily Profit: Rs 1,666</p>
-                <p>Total Profit: Rs 50,000</p>
-                <p>Duration: 30 Days</p>
-                <p>Daily Tasks: 8 TikTok Videos</p>
-                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
-            </div>
-        </div>
-
-        <!-- VIP 5 -->
-        <div class="col-md-4">
-            <div class="plan-card">
-                <div class="plan-title">VIP 5</div>
-                <p>Price: Rs 25,000</p>
-                <p>Daily Profit: Rs 4,166</p>
-                <p>Total Profit: Rs 125,000</p>
-                <p>Duration: 30 Days</p>
-                <p>Daily Tasks: 12 TikTok Videos</p>
-                <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
-            </div>
-        </div>
-
+<body>  <!-- Navbar -->  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Afaq Shahb Investment Plan</a>
+      <span class="badge badge-soft rounded-pill ms-auto px-3 py-2">Demo — Frontend Only (localStorage)</span>
     </div>
+  </nav>  <!-- Dashboard Heading -->  <div class="container my-4 text-center">
+    <h1 class="text-success fw-bold">Dashboard</h1>
+    <p class="text-secondary mb-0">VIP Plans (30 Days) — Auto-credit every 24 hours</p>
+  </div>  <!-- Balance + Active Plan Summary -->  <div class="container">
+    <div class="row g-3 align-items-stretch">
+      <div class="col-lg-4">
+        <div class="plan-card h-100">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="mb-0">Wallet</h5>
+            <span class="badge bg-secondary">PKR</span>
+          </div>
+          <div class="display-6 fw-bold">Rs <span id="balance">0</span></div>
+          <div class="dim small mt-2">Balance auto-increases at daily payout time.</div>
+          <div class="mt-3 d-flex gap-2">
+            <a href="#" id="btnDeposit" class="btn btn-success btn-sm px-3">Deposit</a>
+            <a href="#" id="btnWithdraw" class="btn btn-danger btn-sm px-3">Withdraw</a>
+            <a href="#" id="btnHistory" class="btn btn-warning btn-sm px-3">History</a>
+            <a href="#" id="btnReferral" class="btn btn-info btn-sm px-3">Referral</a>
+          </div>
+        </div>
+      </div><div class="col-lg-8">
+    <div class="plan-card h-100">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="mb-0">Active Plan</h5>
+        <span id="statusBadge" class="badge bg-secondary">No Active Plan</span>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-2">Plan: <strong id="activePlan">—</strong></div>
+          <div class="mb-2">Price: <strong>Rs <span id="planPrice">0</span></strong></div>
+          <div class="mb-2">Daily Profit: <strong>Rs <span id="dailyProfit">0</span></strong></div>
+          <div class="mb-2">Duration Left: <strong><span id="daysLeft">0</span> / 30 days</strong></div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-2">Next Payout In:</div>
+          <div class="h3 countdown" id="countdown">—:—:—</div>
+          <div class="dim small">Last payout: <span id="lastPayoutLabel">—</span></div>
+          <div class="dim small">Ends on: <span id="endDateLabel">—</span></div>
+          <div class="mt-3 d-flex gap-2">
+            <button id="btnCancelPlan" class="btn btn-outline-light btn-sm">Cancel / Finish Plan</button>
+            <button id="btnFastForward" class="btn btn-outline-secondary btn-sm" title="Simulate catch-up">Catch Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- Footer -->
-<div class="footer">
-    &copy; 2025 Afaq Shahb Investment Plan. All Rights Reserved.
+  </div>  <!-- Plans Section -->  <div class="container mt-4">
+    <div class="row g-4"><!-- Template for a plan card -->
+  <div class="col-md-4">
+    <div class="plan-card">
+      <div class="plan-title">VIP 1</div>
+      <p class="mb-1">Price: Rs 1,000</p>
+      <p class="mb-1">Daily Profit: Rs 166</p>
+      <p class="mb-1">Total Profit: Rs 5,000</p>
+      <p class="mb-1">Duration: 30 Days</p>
+      <p class="mb-3">Daily Tasks: 2 TikTok Videos</p>
+      <button class="btn btn-success btn-sm buy-btn" data-plan="VIP 1" data-price="1000" data-daily="166">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="plan-card">
+      <div class="plan-title">VIP 2</div>
+      <p class="mb-1">Price: Rs 1,500</p>
+      <p class="mb-1">Daily Profit: Rs 250</p>
+      <p class="mb-1">Total Profit: Rs 7,500</p>
+      <p class="mb-1">Duration: 30 Days</p>
+      <p class="mb-3">Daily Tasks: 3 TikTok Videos</p>
+      <button class="btn btn-success btn-sm buy-btn" data-plan="VIP 2" data-price="1500" data-daily="250">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="plan-card">
+      <div class="plan-title">VIP 3</div>
+      <p class="mb-1">Price: Rs 5,000</p>
+      <p class="mb-1">Daily Profit: Rs 833</p>
+      <p class="mb-1">Total Profit: Rs 25,000</p>
+      <p class="mb-1">Duration: 30 Days</p>
+      <p class="mb-3">Daily Tasks: 5 TikTok Videos</p>
+      <button class="btn btn-success btn-sm buy-btn" data-plan="VIP 3" data-price="5000" data-daily="833">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="plan-card">
+      <div class="plan-title">VIP 4</div>
+      <p class="mb-1">Price: Rs 10,000</p>
+      <p class="mb-1">Daily Profit: Rs 1,666</p>
+      <p class="mb-1">Total Profit: Rs 50,000</p>
+      <p class="mb-1">Duration: 30 Days</p>
+      <p class="mb-3">Daily Tasks: 8 TikTok Videos</p>
+      <button class="btn btn-success btn-sm buy-btn" data-plan="VIP 4" data-price="10000" data-daily="1666">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="plan-card">
+      <div class="plan-title">VIP 5</div>
+      <p class="mb-1">Price: Rs 25,000</p>
+      <p class="mb-1">Daily Profit: Rs 4,166</p>
+      <p class="mb-1">Total Profit: Rs 125,000</p>
+      <p class="mb-1">Duration: 30 Days</p>
+      <p class="mb-3">Daily Tasks: 12 TikTok Videos</p>
+      <button class="btn btn-success btn-sm buy-btn" data-plan="VIP 5" data-price="25000" data-daily="4166">Buy Now</button>
+    </div>
+  </div>
+
 </div>
 
-<!-- WhatsApp Group Button -->
-<a href="https://chat.whatsapp.com/Lr9SzhW6a9x2WqG3LKTax3?mode=ac_t" target="_blank" class="whatsapp-btn">
-    💬 Join WhatsApp Group
-</a>
+  </div>  <!-- Footer -->  <div class="footer">&copy; 2025 Afaq Shahb Investment Plan. All Rights Reserved.</div>  <!-- WhatsApp Group Button --><a href="https://chat.whatsapp.com/Lr9SzhW6a9x2WqG3LKTax3?mode=ac_t" target="_blank" class="whatsapp-btn">💬 Join WhatsApp Group</a>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html> 
-Malik waliullah 
+  <script>
+    // ======= Persistent Storage Helpers (localStorage) =======
+    const LS_KEY = 'vip_demo_state_v1';
+    function now(){ return Date.now(); }
+    function days(ms){ return ms / (24*60*60*1000); }
+    function fmtPKR(n){ return Number(n||0).toLocaleString('en-PK'); }
+    function fmtTime(ms){
+      if(ms <= 0) return '00:00:00';
+      const s = Math.floor(ms/1000);
+      const hh = String(Math.floor(s/3600)).padStart(2,'0');
+      const mm = String(Math.floor((s%3600)/60)).padStart(2,'0');
+      const ss = String(s%60).padStart(2,'0');
+      return `${hh}:${mm}:${ss}`;
+    }
+    function fmtDate(ts){ return ts ? new Date(ts).toLocaleString() : '—'; }
+
+    function loadState(){
+      try{ return JSON.parse(localStorage.getItem(LS_KEY)) || {}; }catch(e){ return {}; }
+    }
+    function saveState(s){ localStorage.setItem(LS_KEY, JSON.stringify(s)); }
+
+    // Default state
+    const state = Object.assign({
+      balance: 0,
+      activePlan: null, // {name, price, daily, startedAt, lastPayoutAt, endAt, totalDays:30}
+      history: []
+    }, loadState());
+
+    function updateUI(){
+      // Balance
+      document.getElementById('balance').textContent = fmtPKR(state.balance);
+
+      // Active plan UI
+      const hasPlan = !!state.activePlan;
+      document.getElementById('statusBadge').textContent = hasPlan ? 'Active' : 'No Active Plan';
+      document.getElementById('statusBadge').className = hasPlan ? 'badge bg-success' : 'badge bg-secondary';
+
+      const planNameEl = document.getElementById('activePlan');
+      const priceEl = document.getElementById('planPrice');
+      const dailyEl = document.getElementById('dailyProfit');
+      const daysLeftEl = document.getElementById('daysLeft');
+      const countdownEl = document.getElementById('countdown');
+      const lastPayoutLabel = document.getElementById('lastPayoutLabel');
+      const endDateLabel = document.getElementById('endDateLabel');
+
+      if(!hasPlan){
+        planNameEl.textContent = '—';
+        priceEl.textContent = '0';
+        dailyEl.textContent = '0';
+        daysLeftEl.textContent = '0';
+        countdownEl.textContent = '—:—:—';
+        lastPayoutLabel.textContent = '—';
+        endDateLabel.textContent = '—';
+        document.querySelectorAll('.buy-btn').forEach(btn=>btn.classList.remove('disabled-cover'));
+        return;
+      }
+
+      // Fill basics
+      const p = state.activePlan;
+      planNameEl.textContent = p.name;
+      priceEl.textContent = fmtPKR(p.price);
+      dailyEl.textContent = fmtPKR(p.daily);
+      endDateLabel.textContent = fmtDate(p.endAt);
+
+      // Days left
+      const remDays = Math.max(0, Math.ceil((p.endAt - now()) / (24*60*60*1000)));
+      daysLeftEl.textContent = Math.min(30, remDays);
+
+      // Disable buying while a plan is active
+      document.querySelectorAll('.buy-btn').forEach(btn=>btn.classList.add('disabled-cover'));
+
+      // Countdown
+      const nextAt = p.lastPayoutAt + 24*60*60*1000;
+      const remaining = Math.max(0, nextAt - now());
+      const ended = now() >= p.endAt;
+      countdownEl.textContent = ended ? 'Completed' : fmtTime(remaining);
+      lastPayoutLabel.textContent = fmtDate(p.lastPayoutAt);
+    }
+
+    function logHistory(type, amount, note){
+      state.history.push({ts: now(), type, amount, note});
+    }
+
+    function startPlan({name, price, daily}){
+      const start = now();
+      const end = start + (30 * 24*60*60*1000);
+      state.activePlan = { name, price:Number(price), daily:Number(daily), startedAt:start, lastPayoutAt:start, endAt:end, totalDays:30 };
+      logHistory('BUY', -Number(price), `${name} purchased`);
+      saveState(state);
+      updateUI();
+    }
+
+    function cancelPlan(){
+      if(!state.activePlan) return;
+      logHistory('PLAN_END', 0, `${state.activePlan.name} ended manually`);
+      state.activePlan = null;
+      saveState(state);
+      updateUI();
+    }
+
+    // Core accrual engine — runs every second, catches up missed days, stops at 30 days
+    function tick(){
+      if(!state.activePlan){ updateUI(); return; }
+      const p = state.activePlan;
+
+      // If plan ended, just reflect UI
+      if(now() >= p.endAt){ updateUI(); return; }
+
+      // Catch up: how many full 24h blocks since last payout?
+      const elapsed = now() - p.lastPayoutAt;
+      const fullDays = Math.floor(elapsed / (24*60*60*1000));
+      if(fullDays > 0){
+        // Also respect remaining days until endAt
+        const remainingDaysUntilEnd = Math.floor((p.endAt - p.lastPayoutAt) / (24*60*60*1000));
+        const creditDays = Math.min(fullDays, remainingDaysUntilEnd);
+        if(creditDays > 0){
+          const creditAmount = creditDays * p.daily;
+          state.balance += creditAmount;
+          p.lastPayoutAt += creditDays * 24*60*60*1000;
+          logHistory('DAILY_PAYOUT', creditAmount, `${p.name}: ${creditDays} day(s)`);
+          saveState(state);
+        }
+      }
+
+      updateUI();
+    }
+
+    // Wire up Buy buttons
+    document.querySelectorAll('.buy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if(state.activePlan){
+          alert('A plan is already active. Finish or cancel it first.');
+          return;
+        }
+        const plan = btn.dataset.plan;
+        const price = Number(btn.dataset.price);
+        const daily = Number(btn.dataset.daily);
+        // In a real app, validate wallet balance & process payment here
+        startPlan({name: plan, price, daily});
+        alert(`${plan} activated. Daily Rs ${fmtPKR(daily)} will auto-credit every 24h for 30 days.`);
+      });
+    });
+
+    // Controls
+    document.getElementById('btnCancelPlan').addEventListener('click', () => {
+      if(confirm('Finish the current plan? This will stop future payouts.')) cancelPlan();
+    });
+
+    // Fast-forward: simulate 1 day passed (for demo/testing)
+    document.getElementById('btnFastForward').addEventListener('click', () => {
+      if(!state.activePlan){ alert('No active plan.'); return; }
+      // Move lastPayoutAt back by 24h to trigger a payout on next tick
+      state.activePlan.lastPayoutAt -= 24*60*60*1000;
+      saveState(state);
+      tick();
+    });
+
+    // Init
+    updateUI();
+    setInterval(tick, 1000);
+  </script>  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script></body>
+</html>
