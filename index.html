@@ -1,43 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deposit — Afaq Shahb Investment Plan</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-    body {
-        background-color: #0b1b2a;
-        color: white;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afaq Shahb Investment Plan — Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #0b1b2a; color: white; }
+    .plan-card {
+      background: #101828;
+      border-radius: 12px;
+      padding: 20px;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+      height: 100%;
     }
-    .card {
-        background: #101828;
-        border-radius: 10px;
-        padding: 20px;
-        color: white;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-    .footer {
-        text-align: center;
-        padding: 15px;
-        background: #000;
-        margin-top: 30px;
-    }
-    .note-box {
-        background: #182c3d;
-        border-left: 5px solid #00d084;
-        padding: 15px;
-        margin-top: 20px;
-        border-radius: 8px;
-    }
-</style>
+    .plan-card:hover { transform: translateY(-5px); }
+    .plan-title { font-size: 1.4rem; font-weight: bold; color: #00d084; }
+    .footer { text-align: center; padding: 15px; background: #000; margin-top: 30px; }
+  </style>
 </head>
 <body>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Afaq Shahb Investment Plan</a>
+    <a class="navbar-brand fw-bold" href="index.html">Afaq Shahb Investment Plan</a>
     <div>
       <a class="btn btn-light btn-sm" href="about.html">About</a>
       <a class="btn btn-success btn-sm" href="deposit.html">Deposit</a>
@@ -48,62 +37,97 @@
   </div>
 </nav>
 
-<!-- Deposit Section -->
-<div class="container my-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="card text-center">
-        <h3 class="text-success">💰 Deposit Funds</h3>
-        <p class="text-secondary">Add money to your investment account</p>
-        <form id="depositForm">
-          <div class="mb-3">
-            <label for="amount" class="form-label">Enter Amount (Rs)</label>
-            <input type="number" id="amount" class="form-control" min="100" required>
-          </div>
-          <button type="submit" class="btn btn-success">Deposit</button>
-        </form>
-        <hr>
-        <h4>Current Balance: Rs <span id="balance">0</span></h4>
+<!-- Dashboard -->
+<div class="container my-4 text-center">
+  <h1 class="text-success fw-bold">Dashboard</h1>
+  <p class="text-secondary">All Available VIP Plans (30 Days)</p>
+  <h3>💰 Balance: Rs <span id="balance">0</span></h3>
+</div>
 
-        <!-- Note Section -->
-        <div class="note-box text-start">
-          <h5 class="text-warning">📌 Important Note:</h5>
-          <p>✅ یہ 100% ورکنگ ریئل سائٹ ہے۔ آپ لوگ اس میں انویسٹ کریں اور اپنی اماؤنٹ ڈبل کریں۔</p>
-          <p>✅ اگر آپ کو <b>Withdraw</b> یا <b>Deposit</b> میں کوئی مسئلہ آ رہا ہے یا آپ نے ڈپازٹ کیا ہے تو اپنی <b>Transaction ID</b> اس نمبر پر سینڈ کریں: <br><span class="text-info fw-bold">+92XXXXXXXXXX</span></p>
-          <p>✅ اگر آپ کو کوئی بھی مسئلہ آ رہا ہے تو آپ کا مسئلہ حل کر دیا جائے گا۔</p>
-        </div>
+<!-- Plans -->
+<div class="container">
+  <div class="row g-4">
 
+    <!-- VIP 1 -->
+    <div class="col-md-4">
+      <div class="plan-card">
+        <div class="plan-title">VIP 1</div>
+        <p>Price: Rs 1,000</p>
+        <p>Daily Profit: Rs 166</p>
+        <p>Total Profit: Rs 5,000</p>
+        <p>Duration: 30 Days</p>
+        <p>Daily Tasks: 2 TikTok Videos</p>
+        <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
       </div>
     </div>
+
+    <!-- VIP 2 -->
+    <div class="col-md-4">
+      <div class="plan-card">
+        <div class="plan-title">VIP 2</div>
+        <p>Price: Rs 1,500</p>
+        <p>Daily Profit: Rs 250</p>
+        <p>Total Profit: Rs 7,500</p>
+        <p>Duration: 30 Days</p>
+        <p>Daily Tasks: 3 TikTok Videos</p>
+        <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- VIP 3 -->
+    <div class="col-md-4">
+      <div class="plan-card">
+        <div class="plan-title">VIP 3</div>
+        <p>Price: Rs 5,000</p>
+        <p>Daily Profit: Rs 833</p>
+        <p>Total Profit: Rs 25,000</p>
+        <p>Duration: 30 Days</p>
+        <p>Daily Tasks: 5 TikTok Videos</p>
+        <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- VIP 4 -->
+    <div class="col-md-4">
+      <div class="plan-card">
+        <div class="plan-title">VIP 4</div>
+        <p>Price: Rs 10,000</p>
+        <p>Daily Profit: Rs 1,666</p>
+        <p>Total Profit: Rs 50,000</p>
+        <p>Duration: 30 Days</p>
+        <p>Daily Tasks: 8 TikTok Videos</p>
+        <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- VIP 5 -->
+    <div class="col-md-4">
+      <div class="plan-card">
+        <div class="plan-title">VIP 5</div>
+        <p>Price: Rs 25,000</p>
+        <p>Daily Profit: Rs 4,166</p>
+        <p>Total Profit: Rs 125,000</p>
+        <p>Duration: 30 Days</p>
+        <p>Daily Tasks: 12 TikTok Videos</p>
+        <a href="deposit.html" class="btn btn-success btn-sm">Buy Now</a>
+      </div>
+    </div>
+
   </div>
 </div>
 
 <!-- Footer -->
 <div class="footer">
-    &copy; 2025 Afaq Shahb Investment Plan. All Rights Reserved.
+  © 2025 Afaq Shahb Investment Plan. All Rights Reserved. <br>
+  <a href="https://chat.whatsapp.com/Lr9SzhW6a9x2WqG3LKTax3?mode=ac_t" class="text-success fw-bold" target="_blank">💬 Join WhatsApp Group</a> <br>
+  Developed by Malik Waliullah
 </div>
 
 <script>
-// Load balance from localStorage
-let balance = localStorage.getItem("balance") ? parseInt(localStorage.getItem("balance")) : 0;
-document.getElementById("balance").innerText = balance;
-
-// Handle Deposit Form
-document.getElementById("depositForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    let amount = parseInt(document.getElementById("amount").value);
-    if(amount > 0){
-        balance += amount;
-        localStorage.setItem("balance", balance);
-        document.getElementById("balance").innerText = balance;
-        alert("✅ Rs " + amount + " deposited successfully!");
-        document.getElementById("depositForm").reset();
-    } else {
-        alert("⚠️ Please enter a valid amount.");
-    }
-});
+  // Balance localStorage
+  let balance = localStorage.getItem("balance") ? parseInt(localStorage.getItem("balance")) : 0;
+  document.getElementById("balance").innerText = balance;
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
