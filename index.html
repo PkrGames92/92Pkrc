@@ -1,133 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Deposit - Afaq Shahb Investment Plan</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<style>
-    body {
-        background-color: #0b1b2a;
-        color: white;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deposit - Afaq Shahb Investment Plan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #0b1b2a; color: white; }
+    .deposit-card {
+      background: #101828;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      margin-top: 20px;
     }
-    .container {
-        max-width: 600px;
+    label { font-weight: bold; margin-top: 10px; }
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
     }
-    .form-control {
-        background: #101828;
-        color: white;
-        border: 1px solid #444;
-    }
-    .form-control:focus {
-        background: #101828;
-        color: white;
-    }
-    .btn-custom {
-        background: #00d084;
-        border: none;
-        color: black;
-        font-weight: bold;
-    }
-    .btn-custom:hover {
-        background: #00b56a;
-        color: white;
-    }
-    .note-box {
-        background: #222;
-        padding: 15px;
-        border-radius: 10px;
-        margin-top: 20px;
-        color: #ffcc00;
-    }
-</style>
+  </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
+<nav class="navbar navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Afaq Shahb Investment Plan</a>
+    <a class="navbar-brand fw-bold" href="index.html">← Dashboard</a>
+    <span class="fw-bold">Deposit Page</span>
   </div>
 </nav>
 
-<!-- Deposit Section -->
-<div class="container my-5">
-    <h2 class="text-center text-success fw-bold">Deposit</h2>
-    <p class="text-center text-secondary">Add your amount and confirm deposit with Transaction ID</p>
+<div class="container my-4">
+  <h2 class="text-center text-success">💰 Submit Deposit</h2>
 
-    <!-- Deposit Form -->
-    <form id="depositForm" class="mt-4">
-        <!-- Add Amount -->
-        <div class="mb-3">
-            <label for="amount" class="form-label">Add Amount (Rs)</label>
-            <input type="number" class="form-control" id="amount" placeholder="Enter Amount" required>
-        </div>
+  <div class="deposit-card">
+    <form id="depositForm">
+      
+      <!-- Plan -->
+      <label for="plan">Plan</label>
+      <select id="plan" class="form-control" required>
+        <option value="">-- Select Plan --</option>
+        <option value="VIP 1">VIP 1 - Rs 1,000</option>
+        <option value="VIP 2">VIP 2 - Rs 1,500</option>
+        <option value="VIP 3">VIP 3 - Rs 5,000</option>
+        <option value="VIP 4">VIP 4 - Rs 10,000</option>
+        <option value="VIP 5">VIP 5 - Rs 25,000</option>
+      </select>
 
-        <!-- Transaction ID -->
-        <div class="mb-3">
-            <label for="tid" class="form-label">Transaction ID</label>
-            <input type="text" class="form-control" id="tid" placeholder="Enter Transaction ID" required>
-        </div>
+      <!-- Amount -->
+      <label for="amount">Amount (Rs)</label>
+      <input type="number" id="amount" class="form-control" placeholder="Enter Amount" required>
 
-        <button type="submit" class="btn btn-custom w-100">Confirm Deposit</button>
+      <!-- Method -->
+      <label for="method">Method</label>
+      <select id="method" class="form-control" required>
+        <option value="">-- Select Method --</option>
+        <option value="JazzCash">JazzCash</option>
+        <option value="EasyPaisa">EasyPaisa</option>
+        <option value="USDT (TRC20)">USDT (TRC20)</option>
+      </select>
+
+      <!-- Transaction ID -->
+      <label for="txid">Transaction ID (TX ID)</label>
+      <input type="text" id="txid" class="form-control" placeholder="Enter your TX ID" required>
+
+      <!-- Buttons -->
+      <div class="d-flex justify-content-between mt-3">
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a href="history.html" class="btn btn-warning">View History</a>
+        <a href="https://wa.me/923159676813" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+      </div>
     </form>
-
-    <!-- Balance Display -->
-    <div class="mt-4 text-center">
-        <h4>💰 Current Balance: Rs <span id="balance">0</span></h4>
-    </div>
-
-    <!-- Note Section -->
-    <div class="note-box">
-        <strong>Note:</strong> After sending payment, please send your Transaction Screenshot to WhatsApp for confirmation.
-    </div>
-
-    <!-- WhatsApp Button -->
-    <div class="text-center mt-3">
-        <a href="https://wa.me/923319535871" target="_blank" class="btn btn-success">
-            📲 Send Screenshot on WhatsApp
-        </a>
-    </div>
-</div>
-
-<!-- Footer -->
-<div class="footer text-center py-3 bg-dark mt-5">
-    &copy; 2025 Afaq Shahb Investment Plan. All Rights Reserved.
+  </div>
 </div>
 
 <script>
-// Predefined one-time use codes with amounts
-const validCodes = {
-    "12332134": 1000,
-    "09871234": 1500,
-    "6789054321": 1500,
-    "098712345": 5000
-};
-
-let balance = 0;
-
-document.getElementById("depositForm").addEventListener("submit", function(e) {
+  document.getElementById("depositForm").addEventListener("submit", function(e){
     e.preventDefault();
-
-    const amount = parseInt(document.getElementById("amount").value);
-    const tid = document.getElementById("tid").value.trim();
-
-    if (validCodes[tid] && validCodes[tid] === amount) {
-        balance += amount;
-        document.getElementById("balance").innerText = balance;
-
-        alert("✅ Deposit Successful! Amount Rs " + amount + " added to your account.");
-
-        // Remove code after one use
-        delete validCodes[tid];
-
-        document.getElementById("depositForm").reset();
-    } else {
-        alert("❌ Invalid Transaction ID or Amount does not match!");
-    }
-});
+    alert("✅ Deposit Request Submitted Successfully!\nOur team will verify your payment.");
+  });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
